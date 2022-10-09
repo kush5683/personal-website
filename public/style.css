@@ -1,0 +1,82 @@
+@font-face{
+    font-family: mono;
+    src: url('fonts/SourceCodePro-Regular.ttf')
+}
+
+body {
+	background: #020202
+}
+
+
+canvas{
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:-1;
+ }
+
+.logo {
+    display: flex;
+    padding: auto;
+    justify-content: center;
+	padding-bottom: 80px;
+  }
+
+.imgButton{
+    cursor: pointer;
+}
+
+.container {
+	position: absolute;
+  }
+
+.typewriter {
+	display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding-bottom: 0;
+}
+
+
+
+h1 {
+	font-family: mono;
+	font-size: 128px;
+	color: #475EFF;
+	margin-top: 4rem;
+	text-align: center;
+	position: relative;
+}
+
+h1::before,
+h1::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+}
+
+h1::before {
+	background: #020202;
+	animation: typewriter 3s steps(10) forwards 1s;
+}
+
+h1::after {
+	width: 50px;
+	background: #F2EDEB;
+	animation: blink 800ms steps(5, start) infinite,
+		typewriter 3s steps(10) forwards 1s;
+}
+
+@keyframes typewriter {
+	to {
+		left: 100%;
+	}
+}
+
+@keyframes blink {
+
+	to {
+		visibility: hidden;
+	}
+}
