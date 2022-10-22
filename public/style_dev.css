@@ -1,58 +1,40 @@
-@font-face{
-    font-family: mono;
-    src: url('fonts/AzeretMono-VariableFont_wght.ttf')
+@font-face {
+  font-family: mono;
+  src: url("fonts/AzeretMono-VariableFont_wght.ttf");
 }
 
 body {
-	background: #020202
+  background: #020202;
 }
 
-
-
-canvas{
-	position:absolute;
-	left:0;
-	top:0;
-	z-index:-1;
- }
-
-.logo {
-    display: flex;
-    padding: auto;
-    justify-content: center;
-	padding-bottom: 80px;
-  }
-
-.imgButton{
-    cursor: pointer;
+h1 {
+  font-family: mono;
+  font-size: 2em;
+  color: #fff;
 }
 
 .container {
-	position: absolute;
-  }
-
-.typewriter {
-	display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        padding-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
-.name_title {
-    font-family: mono;
-    font-size: 128px;
-    color: #475EFF;
-    margin-top: 4rem;
-    text-align: center;
-    position: relative;
-}
-h1 {
-	font-family: mono;
-	font-size: 128px;
-	color: #475EFF;
-	margin-top: 4rem;
-	text-align: center;
-	position: relative;
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  position: relative;
 }
 
+.grid-item {
+  border-color: #fc2600;
+  border-style: solid;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+}

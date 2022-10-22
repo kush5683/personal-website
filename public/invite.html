@@ -1,31 +1,219 @@
 <head>
-    <link href="invite.css" rel="stylesheet" type="text/css"/>
-    <title>Invitation to Darshan's 50th</title>
-    <script>
-        function sendToRSVP(){
-    window.open("https://formfacade.com/public/113607023915446482393/all/form/1FAIpQLSew-A2QrUE8NE3_5d9FuDMmMf52sgMKsqO5yg3UoqtgxOfKTA","_blank");
-}
-    </script>
+  <!-- For some reason firebasse did not recognize the CSS file so I had to move it here -->
+  <style>
+    @font-face {
+      font-family: "handwriting";
+      src: url("fonts/Yellowtail-Regular.ttf");
+    }
+    .information {
+      /* padding-top: auto; */
+      position: absolute;
+    }
+    a {
+      font-size: 45px;
+      font-family: mono;
+      color: #c3a709;
+      position: relative;
+    }
+
+    h1 {
+      font-family: mono;
+      color: #e8f7ee;
+      font-size: 65px;
+    }
+
+    h2 {
+      font-family: mono;
+      color: #c3a709;
+      font-size: 45px;
+    }
+
+    .subtitle {
+      color: white;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      /* position: relative; */
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+
+    .column {
+      display: flex;
+      /* padding: auto; */
+      justify-content: center;
+      /* po */
+    }
+
+    body {
+      background-color: #020202;
+      margin-right: 100px;
+    }
+
+    .button {
+      background-color: rgba(46, 53, 50, 1);
+      border-color: #c3a709;
+      border-style: solid;
+      border-radius: 50px;
+      /* width: auto; */
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      font-family: "handwriting";
+    }
+
+    .button:hover {
+      background-color: #c3a709;
+      color: white;
+    }
+
+    .shimmer {
+      font-family: "handwriting";
+      font-weight: 300;
+      font-size: 65px;
+      margin: 0 auto;
+      padding: 0 140px 0 0;
+      display: inline;
+      margin-bottom: 0;
+    }
+
+    .shimmer {
+      text-align: center;
+      color: rgba(194, 167, 8, 0.6);
+      background: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        from(#222),
+        to(#222),
+        color-stop(0.5, #fff)
+      );
+      background: -moz-gradient(
+        linear,
+        left top,
+        right top,
+        from(#222),
+        to(#222),
+        color-stop(0.5, #fff)
+      );
+      background: gradient(
+        linear,
+        left top,
+        right top,
+        from(#222),
+        to(#222),
+        color-stop(0.5, #fff)
+      );
+      -webkit-background-size: 125px 100%;
+      -moz-background-size: 125px 100%;
+      background-size: 125px 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      background-clip: text;
+      -webkit-animation-name: shimmer;
+      -moz-animation-name: shimmer;
+      animation-name: shimmer;
+      -webkit-animation-duration: 2s;
+      -moz-animation-duration: 2s;
+      animation-duration: 2s;
+      -webkit-animation-iteration-count: infinite;
+      -moz-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-color: #222;
+    }
+    @-moz-keyframes shimmer {
+      0% {
+        background-position: top left;
+      }
+      100% {
+        background-position: top right;
+      }
+    }
+    @-webkit-keyframes shimmer {
+      0% {
+        background-position: top left;
+      }
+      100% {
+        background-position: top right;
+      }
+    }
+    @-o-keyframes shimmer {
+      0% {
+        background-position: top left;
+      }
+      100% {
+        background-position: top right;
+      }
+    }
+    @keyframes shimmer {
+      0% {
+        background-position: top left;
+      }
+      100% {
+        background-position: top right;
+      }
+    }
+  </style>
+  <title>Invitation to Darshan's 50th</title>
+  <script>
+    function sendToRSVP() {
+      window.open(
+        "https://formfacade.com/public/113607023915446482393/all/form/1FAIpQLSew-A2QrUE8NE3_5d9FuDMmMf52sgMKsqO5yg3UoqtgxOfKTA",
+        "_blank"
+      );
+    }
+  </script>
 </head>
 
 <body>
-    
-    <div class="container">
-        
-        <div class="column">
-            
-            <div class="information">
-                <h1>Invitation to Darshan's 50th</h1>
-                <h2>When: Saturday, December 17th, 2022</h2>
-                <a href="https://www.gupshupnyc.com">Where: GupShup Indian Resturant 15 E 18th St (Between Park Ave &, Irving Pl), New York, NY 10003</a>
-                <h2>Time: 5:30 PM</h2>
-                <a href="https://www.dearirving.com">Where: Dear Irving 155 Irving Pl, New York, NY 10003</a>
-                <h2>Time: 8:30 PM</h2>
-                <h2>Attire: Formal</h2>
-                <h2>Gifts: None</h2>
-            </div>
-            <button onclick="sendToRSVP()">RSVP</button>
+  <div class="container">
+    <div class="column">
+      <div class="information">
+        <h1 class="shimmer">Shhh it's a Surprise!</h1>
+        <h2 class="subtitle">
+          Join us as we celebrate Darshan's 50th birthday! December 17th, 2022.
+          Please RSVP by October 26th, 2022.
+        </h2>
+        <div class="button-row">
+          <button class="button" onclick="sendToRSVP()">RSVP</button>
         </div>
-</div>
-    
+        <h2>When: Saturday, December 17th, 2022</h2>
+        <h2>Attire: Dress to impress!</h2>
+        <h2>Gifts: Nothing is more valuable that your presence!</h2>
+        <h2>
+          <a
+            href="https://maps.apple.com/?address=115%20E%2018th%20St,%20New%20York,%20NY%2010003,%20United%20States&auid=9877340768557655973&ll=40.736946,-73.987727&lsp=9902&q=Gupshup&_ext=CjIKBQgEEOIBCgQIBRADCgQIBhAUCgQIChAACgQIUhABCgQIVRAQCgQIWRADCgUIpAEQARIkKSPHjJe/XURAMf71Fr+Vf1LAOaGcsvPlXkRAQTiEHoHTflLA"
+            >Dinner: GupShup Indian Resturant</a
+          >
+        </h2>
+        <h2>Time: 5:00 PM</h2>
+        <h2 class="subtitle">The party continues!</h2>
+        <h2>
+          <a
+            href="https://maps.apple.com/?address=56%20Irving%20Pl,%20New%20York,%20NY%2010003,%20United%20States&auid=65648311788170741&ll=40.736031,-73.987041&lsp=9902&q=Cibar&_ext=CjIKBQgEEOIBCgQIBRADCgQIBhARCgQIChAACgQIUhABCgQIVRAQCgQIWRAECgUIpAEQARImKZe8pp2hXURAMfvedR2Of1LAORWSzPnHXkRAQbN4LODLflLAUAQ%3D"
+            >Drinks (21+): Cibar Cocktail Lounge
+          </a>
+        </h2>
+        <h2>Time: 8:30 PM</h2>
+        <h2>
+          <a
+            href="https://maps.apple.com/?address=101%20E%2016th%20St,%20New%20York,%20NY%20%2010003,%20United%20States&auid=14732894708836868874&ll=40.735862,-73.988768&lsp=9902&q=Champion%20Parking&_ext=CjkKBQgEEOIBCgQIBRADCgQIBhATCgQIChAACgQIUhAICgQIVRARCgQIWRACCgUIogEQAQoFCKQBEAESJin+jYf5nl1EQDEnqCZurH9SwDl8Y61VxV5EQEH3reww6n5SwFAE"
+            >Suggested Parking</a
+          >
+        </h2>
+      </div>
+    </div>
+  </div>
 </body>

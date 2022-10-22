@@ -1,60 +1,19 @@
 <head>
   <link rel="stylesheet" href="style_dev.css" />
-  <script>
-    function GitHub() {
-      window.open("https://github.com/kush5683");
-    }
-
-    function LinkedIn() {
-      window.open("https://www.linkedin.com/in/kush5683/");
-    }
-
-    async function ScrollDown() {
-      await new Promise((res) => setTimeout(res, 4200));
-      window.scrollTo({
-        top: 500,
-        left: 0,
-        behavior: "smooth",
-      });
-    }
-    ScrollDown();
-  </script>
 </head>
 
-<body id="main_body">
-  
-
-  <div id="container">
-    <div class="typewriter">
-      <h1 id="name_title"></h1>
+<body>
+  <div class="container">
+    <div class="grid-container">
+      <div class="grid-item"><h1>Item</h1></div>
+      <div class="grid-item"><h1>Item</h1></div>
+      <div class="grid-item"><h1>Item</h1></div>
+      <div class="grid-item"><h1>Item</h1></div>
+      <div class="grid-item"><h1>Item</h1></div>
+      <div class="grid-item"><h1>Item</h1></div>
+      <div class="grid-item"><h1>Item</h1></div>
+      <div class="grid-item"><h1>Item</h1></div>
+      <div class="grid-item"><h1>Item</h1></div>
     </div>
-
-    <div class="logo">
-      <img
-        class="imgButton"
-        src="assets/GitHub-Mark.png"
-        alt="GitHub Logo"
-        width="200"
-        height="200"
-        onclick="GitHub()"
-      />
-      <h2>⠀⠀⠀</h2>
-      <img
-        class="imgButton"
-        src="assets/LinkedIn_logo_initials.png"
-        alt="LinkedIn Logo"
-        width="200"
-        height="200"
-        onclick="LinkedIn()"
-      />
-    </div>
-    </div>
-    <canvas id="conway_board" width="400" height="400" />
-
-
-    <div id="bottom"></div>
   </div>
-
-  <script src="conway.js"></script>
-  <script src="title.js"></script>
 </body>
