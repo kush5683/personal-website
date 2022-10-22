@@ -1,0 +1,60 @@
+@font-face{
+    font-family: mono;
+    src: url('fonts/SourceCodePro-Regular.ttf')
+  }
+  
+:root{
+  --background-color: rgb(36, 41, 46);
+  --border-color: rgba(255,255,255,0.1);
+  --inactive-background-color: rgb(27, 30, 34);
+}
+
+*{
+  box-sizing: border-box;
+}
+
+main{
+    /* flex-grow: 1; */
+  }
+  
+main > article{
+  display:grid;
+  height: 100%;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 2fr 1fr;
+}
+  
+main > article > .article-section{
+  height: 100%;
+  padding-left: 10px;
+}
+
+main > article > .Education,
+main > article > .Projects{
+  border-left: 1px solid var(--border-color);
+}
+
+main > article > .Education,
+main > article > .Skills{
+  border-top: 1px solid var(--border-color);
+}
+
+main > article > .article-section > .section-title{
+  color: #FC2500;
+}
+
+.skill-sections-programming,
+.skill-sections-tools{
+display: flex;
+/* justify-content: center; */
+align-items: center;
+}
+
+.skill-sections-programming > p,
+.skill-sections-tools > p{
+padding-left: 10px;
+}
+
+.skill-sections-tools {
+  padding-bottom: 5px;
+}

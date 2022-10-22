@@ -13,7 +13,7 @@
   box-sizing: border-box;
 }
 
-h1,h2,h3,a,p,span{
+h1,h2,h3,a,p,span, li{
   font-family: "mono";
   font-weight: 400;
   color: white;
@@ -43,7 +43,7 @@ nav{
 }
 
 nav > .nav-section{
-  padding: 3rem 2rem;
+  padding: 1rem 1rem;
   display: flex;
   gap: 1rem;
   border-left: 1px solid var(--border-color);
