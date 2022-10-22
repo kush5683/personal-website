@@ -26,8 +26,9 @@ main > article{
   
 main > article > .article-section{
   height: 100%;
-  padding-left: 10px;
+  padding-left: 25px;
 }
+
 
 main > article > .Education,
 main > article > .Projects{
@@ -37,6 +38,7 @@ main > article > .Projects{
 main > article > .Education,
 main > article > .Skills{
   border-top: 1px solid var(--border-color);
+  padding-bottom: 10px;
 }
 
 main > article > .article-section > .section-title{
