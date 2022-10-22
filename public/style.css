@@ -1,84 +1,176 @@
 @font-face{
-    font-family: mono;
-    src: url('fonts/SourceCodePro-Regular.ttf')
+  font-family: mono;
+  src: url('fonts/SourceCodePro-Regular.ttf')
 }
 
-body {
-	background: #020202
+:root{
+  --background-color: rgb(36, 41, 46);
+  --border-color: rgba(255,255,255,0.1);
+  --inactive-background-color: rgb(27, 30, 34);
+}
+
+*{
+  box-sizing: border-box;
+}
+
+h1,h2,h3,a,p,span{
+  font-family: "mono";
+  font-weight: 400;
+  color: white;
+}
+
+h1{
+  font-size: 2.5rem;
+}
+
+a{
+  text-decoration: none;
+}
+
+body{
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0px;
+  overflow: hidden;
+}
+
+nav{
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+}
+
+nav > .nav-section{
+  padding: 3rem 2rem;
+  display: flex;
+  gap: 1rem;
+  border-left: 1px solid var(--border-color);
+  align-items: center;
+  justify-content: center;
+}
+
+nav > .nav-section > a:hover{
+  color:#FC2500;
+}
+
+#nav-logo-section,
+#nav-link-section{
+  flex-basis: calc(100% / 3);
+}
+
+#nav-social-section,
+#nav-name-section{
+  flex-grow: 1;
 }
 
 
 
-canvas{
-	position:absolute;
-	left:0;
-	top:0;
-	z-index:-1;
- }
-
-.logo {
-    display: flex;
-    padding: auto;
-    justify-content: center;
-	padding-bottom: 80px;
-  }
-
-.imgButton{
-    cursor: pointer;
+#nav-logo-section{
+  justify-content: flex-start;
 }
 
-.container {
-	position: absolute;
-  }
-
-.typewriter {
-	display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        padding-bottom: 0;
-		/* padding-top: 100px; */
+#nav-logo-section > a > i,
+#nav-social-section > a > i{
+  font-size: 2.5rem;
 }
 
 
-
-h1 {
-	font-family: mono;
-	font-size: 128px;
-	color: #475EFF;
-	margin-top: 4rem;
-	text-align: center;
-	position: relative;
+#nav-link-section{
+  gap: 6rem;
 }
 
-h1::before,
-h1::after {
-	content: "";
-	position: absolute;
-	inset: 0;
+#nav-social-section{
+  gap: 3rem;
 }
 
-h1::before {
-	background: #020202;
-	animation: typewriter 3s steps(10) forwards 1s;
+main{
+  flex-grow: 1;
 }
 
-h1::after {
-	width: 50px;
-	background: #F2EDEB;
-	animation: blink 800ms steps(5, start) infinite,
-		typewriter 3s steps(10) forwards 1s;
+main > article{
+  display:grid;
+  height: 100%;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 2fr 1fr;
 }
 
-@keyframes typewriter {
-	to {
-		left: 100%;
-	}
+main > article > .article-section{
+  height: 100%;
 }
 
-@keyframes blink {
+main > article > .article-description-section,
+main > article > .article-blank-section{
+  border-left: 1px solid var(--border-color)
+}
 
-	to {
-		visibility: hidden;
-	}
+main > article > .article-title-section,
+main > article > .article-blank-section{
+  border-top: 1px solid var(--border-color);
+}
+
+main > article:first-child > .article-image-section {
+  background-image: url("assets/article1-img.jpg");
+}
+
+main > article:nth-child(2) > .article-image-section {
+  background-image: url("assets/article1-img.jpg");
+}
+
+main > article > .article-image-section {
+  background-position: center;
+  background-size: cover;
+}
+
+main > article > .article-description-section,
+main > article > .article-title-section {
+  position: relative;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 4rem; 
+}
+
+main > article > .article-description-section > p > a{
+  color: #FC2500;
+}
+
+main > article > .article-description-section > p  > a:hover {
+  text-decoration: underline;
+
+}
+
+#nav-name-section,
+main > article> .article-blank-section
+{
+  background-color: var(--inactive-background-color);
+}
+
+.article-blank-section{
+  cursor: pointer;
+  position: relative;
+}
+
+.article-blank-section:hover:before{
+  background-position: 100% 100%;
+}
+
+.article-blank-section:before{
+  background: linear-gradient(
+    130deg,
+    transparent 0% 33%,
+    #5c01dc 66%,
+    #cc3295 83.5%,
+    #f2be19 100%
+  );
+  background-position: 0% 0%;
+  background-size: 300% 300%;
+  content: "";
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  transition: background-position 350ms ease;
+  width: 100%;
+  z-index: 1;
 }

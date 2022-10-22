@@ -1,59 +1,51 @@
+<!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="style.css" />
-    <script>
-      function GitHub() {
-        window.open("https://github.com/kush5683");
-      }
-  
-      function LinkedIn() {
-        window.open("https://www.linkedin.com/in/kush5683/");
-      }
-  
-      async function ScrollDown() {
-        await new Promise((res) => setTimeout(res, 4200));
-        window.scrollTo({
-          top: 500,
-          left: 0,
-          behavior: "smooth",
-        });
-      }
-      ScrollDown();
-    </script>
-  </head>
-  
-  
-  <body id="main_body">
-  
-    <div id="container">
-      <div class="typewriter">
-        <h1>Kush Shah.</h1>
-      </div>
-  
-      <div class="logo">
-        <img
-          class="imgButton"
-          src="assets/GitHub-Mark.png"
-          alt="GitHub Logo"
-          width="200"
-          height="200"
-          onclick="GitHub()"
-        />
-        <h2>⠀⠀⠀</h2>
-        <img
-          class="imgButton"
-          src="assets/LinkedIn_logo_initials.png"
-          alt="LinkedIn Logo"
-          width="200"
-          height="200"
-          onclick="LinkedIn()"
-        />
-      </div>
-      </div>
-      <canvas id="conway_board" width="400" height="400" />
-  
-      <div id="bottom"></div>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/d063311697.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav>
+    <div id="nav-logo-section" class="nav-section">
+      <a href="#">
+        <i class="fa-solid fa-face-smile"></i>
+      </a>
+    </div>
+    <div id="nav-link-section" class="nav-section">
+      <a href="index.html">Home</a>
+      <a href="resume.html">Resumé</a>
+    </div>
+    <div id="nav-social-section" class="nav-section">
+      <a href="https://github.com/kush5683" target="_blank">
+        <i class="fa-brands fa-square-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/kush5683" target="_blank">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+    </div>
+    <div id="nav-name-section" class="nav-section">
+      <p>Kush Shah</p>
     </div>
   
-    <script src="conway.js"></script>
-  </body>
+  </nav>
+  <main>
+    <article>
+      <div class="article-image-section article-section">
+      </div>
+      <div class="article-description-section article-section">
+        <p>Hello World!</p>
+        <p>
+          I am a 21 year old developer studying Computer Science at 
+          <a href="https://www.wpi.edu/" target="_blank">Worcester Polytechnic Institute.</a> 
+          My interests include web development, data science, and cybersecurity. 
+          Please checkout my <a href="https://github.com/kush5683" target="_blank">GitHub</a> to see what I've worked on and feel free to message me on <a href="https://www.linkedin.com/in/kush5683" target="_blank">LinkedIn</a>.
+        </p>
+      </div>
+      <div class="article-title-section article-section">
+        <h1>Kush Shah</h1>
+      </div>
+      <div class="article-blank-section article-section">
+      </div>
+    </article>
+  </main>
   
+</body>
