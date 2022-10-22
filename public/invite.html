@@ -1,171 +1,5 @@
 <head>
-  <!-- For some reason firebasse did not recognize the CSS file so I had to move it here -->
-  <style>
-    @font-face {
-      font-family: "handwriting";
-      src: url("fonts/Yellowtail-Regular.ttf");
-    }
-    .information {
-      /* padding-top: auto; */
-      position: absolute;
-    }
-    a {
-      font-size: 45px;
-      font-family: mono;
-      color: #c3a709;
-      position: relative;
-    }
-
-    h1 {
-      font-family: mono;
-      color: #e8f7ee;
-      font-size: 65px;
-    }
-
-    h2 {
-      font-family: mono;
-      color: #c3a709;
-      font-size: 45px;
-    }
-
-    .subtitle {
-      color: white;
-    }
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-      /* position: relative; */
-      top: 50%;
-      -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
-    }
-
-    .column {
-      display: flex;
-      /* padding: auto; */
-      justify-content: center;
-      /* po */
-    }
-
-    body {
-      background-color: #020202;
-      margin-right: 100px;
-    }
-
-    .button {
-      background-color: rgba(46, 53, 50, 1);
-      border-color: #c3a709;
-      border-style: solid;
-      border-radius: 50px;
-      /* width: auto; */
-      color: white;
-      padding: 16px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      transition-duration: 0.4s;
-      cursor: pointer;
-      font-family: "handwriting";
-    }
-
-    .button:hover {
-      background-color: #c3a709;
-      color: white;
-    }
-
-    .shimmer {
-      font-family: "handwriting";
-      font-weight: 300;
-      font-size: 65px;
-      margin: 0 auto;
-      padding: 0 140px 0 0;
-      display: inline;
-      margin-bottom: 0;
-    }
-
-    .shimmer {
-      text-align: center;
-      color: rgba(194, 167, 8, 0.6);
-      background: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        from(#222),
-        to(#222),
-        color-stop(0.5, #fff)
-      );
-      background: -moz-gradient(
-        linear,
-        left top,
-        right top,
-        from(#222),
-        to(#222),
-        color-stop(0.5, #fff)
-      );
-      background: gradient(
-        linear,
-        left top,
-        right top,
-        from(#222),
-        to(#222),
-        color-stop(0.5, #fff)
-      );
-      -webkit-background-size: 125px 100%;
-      -moz-background-size: 125px 100%;
-      background-size: 125px 100%;
-      -webkit-background-clip: text;
-      -moz-background-clip: text;
-      background-clip: text;
-      -webkit-animation-name: shimmer;
-      -moz-animation-name: shimmer;
-      animation-name: shimmer;
-      -webkit-animation-duration: 2s;
-      -moz-animation-duration: 2s;
-      animation-duration: 2s;
-      -webkit-animation-iteration-count: infinite;
-      -moz-animation-iteration-count: infinite;
-      animation-iteration-count: infinite;
-      background-repeat: no-repeat;
-      background-position: 0 0;
-      background-color: #222;
-    }
-    @-moz-keyframes shimmer {
-      0% {
-        background-position: top left;
-      }
-      100% {
-        background-position: top right;
-      }
-    }
-    @-webkit-keyframes shimmer {
-      0% {
-        background-position: top left;
-      }
-      100% {
-        background-position: top right;
-      }
-    }
-    @-o-keyframes shimmer {
-      0% {
-        background-position: top left;
-      }
-      100% {
-        background-position: top right;
-      }
-    }
-    @keyframes shimmer {
-      0% {
-        background-position: top left;
-      }
-      100% {
-        background-position: top right;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style_invite.css" />
   <title>Invitation to Darshan's 50th</title>
   <script>
     function sendToRSVP() {
@@ -184,21 +18,21 @@
         <h1 class="shimmer">Shhh it's a Surprise!</h1>
         <h2 class="subtitle">
           Join us as we celebrate Darshan's 50th birthday! December 17th, 2022.
-          Please RSVP by October 26th, 2022.
+          Please RSVP by October 28th, 2022.
         </h2>
         <div class="button-row">
           <button class="button" onclick="sendToRSVP()">RSVP</button>
         </div>
         <h2>When: Saturday, December 17th, 2022</h2>
         <h2>Attire: Dress to impress!</h2>
-        <h2>Gifts: Nothing is more valuable that your presence!</h2>
+        <h2>Gifts: Nothing is more valuable than your presence!</h2>
         <h2>
           <a
             href="https://maps.apple.com/?address=115%20E%2018th%20St,%20New%20York,%20NY%2010003,%20United%20States&auid=9877340768557655973&ll=40.736946,-73.987727&lsp=9902&q=Gupshup&_ext=CjIKBQgEEOIBCgQIBRADCgQIBhAUCgQIChAACgQIUhABCgQIVRAQCgQIWRADCgUIpAEQARIkKSPHjJe/XURAMf71Fr+Vf1LAOaGcsvPlXkRAQTiEHoHTflLA"
             >Dinner: GupShup Indian Resturant</a
           >
         </h2>
-        <h2>Time: 5:00 PM</h2>
+        <h2>Time: 5:00 PM (Darshan arrives at 5:30)</h2>
         <h2 class="subtitle">The party continues!</h2>
         <h2>
           <a
