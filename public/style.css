@@ -1,38 +1,44 @@
-@font-face{
+@font-face {
   font-family: mono;
-  src: url('fonts/SourceCodePro-Regular.ttf')
+  src: url("fonts/SourceCodePro-Regular.ttf");
 }
 
-@font-face{
+@font-face {
   font-family: title-font;
-  src: url('fonts/SummerFaith-Regular.ttf')
+  src: url("fonts/SummerFaith-Regular.ttf");
 }
 
-:root{
+:root {
   --background-color: rgb(36, 41, 46);
-  --border-color: rgba(255,255,255,0.1);
+  --border-color: rgba(255, 255, 255, 0.1);
   --inactive-background-color: rgb(27, 30, 34);
 }
 
-*{
+* {
   box-sizing: border-box;
 }
 
-h1,h2,h3,a,p,span, li{
+h1,
+h2,
+h3,
+a,
+p,
+span,
+li {
   font-family: "mono";
   font-weight: 400;
   color: white;
 }
 
-h1{
+h1 {
   font-size: 2.5rem;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-body{
+body {
   background-color: var(--background-color);
   display: flex;
   flex-direction: column;
@@ -41,13 +47,14 @@ body{
   overflow: hidden;
 }
 
-nav{
+nav {
   display: flex;
   width: 100%;
   border-bottom: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
 }
 
-nav > .nav-section{
+nav > .nav-section {
   padding: 1rem 1rem;
   display: flex;
   gap: 1rem;
@@ -56,62 +63,59 @@ nav > .nav-section{
   justify-content: center;
 }
 
-nav > .nav-section > a:hover{
-  color:#FC2500;
+nav > .nav-section > a:hover {
+  color: #fc2500;
 }
 
 #nav-logo-section,
-#nav-link-section{
+#nav-link-section {
   flex-basis: calc(100% / 3);
 }
 
 #nav-social-section,
-#nav-name-section{
+#nav-name-section {
   flex-grow: 1;
 }
 
-
-
-#nav-logo-section{
+#nav-logo-section {
   justify-content: flex-start;
 }
 
 #nav-logo-section > a > i,
-#nav-social-section > a > i{
+#nav-social-section > a > i {
   font-size: 2.5rem;
 }
 
-
-#nav-link-section{
+#nav-link-section {
   gap: 6rem;
 }
 
-#nav-social-section{
+#nav-social-section {
   gap: 3rem;
 }
 
-main{
+main {
   flex-grow: 1;
 }
 
-main > article{
-  display:grid;
+main > article {
+  display: grid;
   height: 100%;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 2fr 1fr;
 }
 
-main > article > .article-section{
+main > article > .article-section {
   height: 100%;
 }
 
 main > article > .article-description-section,
-main > article > .article-blank-section{
-  border-left: 1px solid var(--border-color)
+main > article > .article-blank-section {
+  border-left: 1px solid var(--border-color);
 }
 
 main > article > .article-title-section,
-main > article > .article-blank-section{
+main > article > .article-blank-section {
   border-top: 1px solid var(--border-color);
 }
 
@@ -119,56 +123,52 @@ main > article:first-child > .article-image-section {
   background-image: url("assets/article1-img.jpg");
 }
 
-
 main > article > .article-image-section {
   background-position: center;
   background-size: cover;
 }
 
-main > article > .article-description-section{
+main > article > .article-description-section {
   position: relative;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 4rem; 
+  padding: 4rem;
 }
 
-
-main > article > .article-description-section > p{
+main > article > .article-description-section > p {
   font-size: 1.5rem;
   text-align: justify;
 }
 
-main > article > .article-description-section > p > a{
-  color: #FC2500;
+main > article > .article-description-section > p > a {
+  color: #fc2500;
 }
 
-main > article > .article-description-section > p  > a:hover {
+main > article > .article-description-section > p > a:hover {
   text-decoration: underline;
-
 }
 
 #nav-name-section,
-main > article> .article-blank-section
-{
+main > article > .article-blank-section {
   background-color: var(--inactive-background-color);
 }
 
-.article-blank-section{
+.article-blank-section {
   /* cursor: pointer; */
   position: relative;
 }
 
-.article-blank-section:hover:before{
+.article-blank-section:hover:before {
   background-position: 100% 100%;
 }
 
-.article-blank-section:before{
+.article-blank-section:before {
   background: linear-gradient(
     130deg,
     transparent 0% 33%,
-    #1B1E22 66%,
-    #2978A0 83.5%,
-    #FC2500 100%
+    #1b1e22 66%,
+    #2978a0 83.5%,
+    #fc2500 100%
   );
   background-position: 0% 0%;
   background-size: 300% 300%;
@@ -182,27 +182,21 @@ main > article> .article-blank-section
   z-index: 1;
 }
 
-
-main> article>.article-title-section{
+main > article > .article-title-section {
   margin: 0px;
   align-items: center;
   justify-content: center;
   display: flex;
-  background: radial-gradient(
-    rgba(255,255,255,0.1) 8%,
-    transparent 8%
-  );
+  background: radial-gradient(rgba(255, 255, 255, 0.1) 8%, transparent 8%);
   background-position: 0% 0%;
   background-size: 5vmin 5vmin;
 }
 
-main> article>.article-title-section > h1{
-  
+main > article > .article-title-section > h1 {
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
   position: absolute;
-  font-size: 200px; 
+  font-size: 200px;
   font-family: "title-font";
-
 }
