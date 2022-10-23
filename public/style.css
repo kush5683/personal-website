@@ -174,3 +174,8 @@ main > article> .article-blank-section
   width: 100%;
   z-index: 1;
 }
+
+main> article>.article-title-section > h1{
+	font-size: 400px;
+/*	color: red;*/
+}
