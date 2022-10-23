@@ -119,17 +119,13 @@ main > article:first-child > .article-image-section {
   background-image: url("assets/article1-img.jpg");
 }
 
-main > article:nth-child(2) > .article-image-section {
-  background-image: url("assets/article1-img.jpg");
-}
 
 main > article > .article-image-section {
   background-position: center;
   background-size: cover;
 }
 
-main > article > .article-description-section,
-main > article > .article-title-section {
+main > article > .article-description-section{
   position: relative;
   flex-direction: column;
   justify-content: flex-end;
@@ -188,19 +184,25 @@ main > article> .article-blank-section
 
 
 main> article>.article-title-section{
-  padding: 0px;
   margin: 0px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background: radial-gradient(
+    rgba(255,255,255,0.1) 8%,
+    transparent 8%
+  );
+  background-position: 0% 0%;
+  background-size: 5vmin 5vmin;
 }
 
 main> article>.article-title-section > h1{
+  
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
-  position: relative;
-  display: flex;
-  font-size: 100px;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  font-size: 200px; 
   font-family: "title-font";
 
 }
