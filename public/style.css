@@ -1,6 +1,6 @@
 @font-face {
   font-family: mono;
-  src: url("fonts/SourceCodePro-Regular.ttf");
+  src: url("fonts/JetBrainsMono-Medium.ttf");
 }
 
 @font-face {
@@ -103,6 +103,7 @@ main > article {
   height: 100%;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 2fr 1fr;
+  position: relative;
 }
 
 main > article > .article-section {
