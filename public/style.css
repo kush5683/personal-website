@@ -44,7 +44,6 @@ body {
   flex-direction: column;
   height: 100vh;
   margin: 0px;
-  overflow: hidden;
 }
 
 nav {
@@ -61,6 +60,7 @@ nav > .nav-section {
   border-left: 1px solid var(--border-color);
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 nav > .nav-section > a:hover {
@@ -75,6 +75,8 @@ nav > .nav-section > a:hover {
 #nav-social-section,
 #nav-name-section {
   flex-grow: 1;
+  flex-wrap: wrap;
+  flex-shrink: 1;
 }
 
 #nav-logo-section {
@@ -125,9 +127,12 @@ main > article:first-child > .article-image-section {
 }
 
 main > article > .article-image-section {
+  position: relative;
   background-position: center;
   background-size: cover;
+  height: 100%;
 }
+
 
 main > article > .article-description-section {
   position: relative;

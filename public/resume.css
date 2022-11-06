@@ -17,6 +17,10 @@ main {
   flex-grow: 1;
 }
 
+h1{
+  margin: 1vh;
+}
+
 main > article {
   display: grid;
   height: 100%;
@@ -37,7 +41,7 @@ main > article > .Projects {
 main > article > .Education,
 main > article > .Skills {
   border-top: 1px solid var(--border-color);
-  padding-bottom: 10px;
+  /* padding-bottom: 10px; */
 }
 
 main > article > .article-section > .section-title {
@@ -54,10 +58,11 @@ main > article > .article-section > .section-title {
 .skill-sections-programming > p,
 .skill-sections-tools > p {
   padding-left: 10px;
+  
 }
 
 .skill-sections-tools,
 .skill-sections-education {
-  padding-bottom: 15px;
+  /* padding-bottom: 15px; */
   position: absolute;
 }
