@@ -139,6 +139,7 @@ function runGame() {
   checkPlayerCollision();
   renderGame();
   if (checkWinner()) {
+    renderGame();
     alert("winner" + players[0].type);
     return;
   }
