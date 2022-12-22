@@ -9,7 +9,7 @@ function onload() {
 
   board = canvas;
   board_width = 500;
-  board_height = 900;
+  board_height = 800;
 
   board_ctx = board.getContext("2d");
 }
