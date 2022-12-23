@@ -33,7 +33,7 @@ class Player {
 }
 
 function initPlayer() {
-  let numPlayers = 9;
+  let numPlayers = 24;
   let players = [];
   for (let i = 0; i < numPlayers + 1; i++) {
     players.push(
