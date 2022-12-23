@@ -33,8 +33,9 @@ class Player {
 }
 
 function initPlayer() {
+  let numPlayers = 9;
   let players = [];
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < numPlayers + 1; i++) {
     players.push(
       new Player(
         Math.floor(Math.random() * board_width),
@@ -43,7 +44,7 @@ function initPlayer() {
       )
     );
   }
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < numPlayers + 1; i++) {
     players.push(
       new Player(
         Math.floor(Math.random() * board_width),
@@ -52,7 +53,7 @@ function initPlayer() {
       )
     );
   }
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < numPlayers + 1; i++) {
     players.push(
       new Player(
         Math.floor(Math.random() * board_width),
@@ -69,6 +70,7 @@ let players = initPlayer();
 
 function movePlayer(elapsedTime) {
   for (let i = 0; i < players.length; i++) {
+    if (players[i].type == "📄") continue;
     // choose a random velocity value
     let velocity = Math.random() * 10;
     // choose a random direction
@@ -87,8 +89,144 @@ function movePlayer(elapsedTime) {
   }
 }
 
+function moveSpecificPlayerRandomly(player, elapsedTime) {
+  // choose a random velocity value
+  let velocity = Math.random() * 10;
+  // choose a random direction
+  let angle = Math.random() * 2 * Math.PI;
+  // calculate the x and y components of the velocity based on the angle
+  let vx = velocity * Math.cos(angle);
+  let vy = velocity * Math.sin(angle);
+  // update the player's position based on the elapsed time and velocity
+  let x = player.x + vx * elapsedTime;
+  let y = player.y + vy * elapsedTime;
+  // clamp the position to the nearest valid value if it is outside the canvas bounds
+  x = Math.max(0, Math.min(board_width, x));
+  y = Math.max(0, Math.min(board_height, y));
+  player.x = x;
+  player.y = y;
+}
+
+function checkIfEnemyLeft(player) {
+  for (let i = 0; i < players.length; i++) {
+    switch (player.type) {
+      case "📄":
+        if (players[i].type == "🥌") {
+          return true;
+        }
+        break;
+      case "🥌":
+        if (players[i].type == "✂️") {
+          return true;
+        }
+        break;
+      case "✂️":
+        if (players[i].type == "📄") {
+          return true;
+        }
+        break;
+    }
+  }
+  return false;
+}
+
+function movePlayersTowardEnemy(elapsedTime) {
+  let moveBias = elapsedTime / 2;
+  for (let i = 0; i < players.length; i++) {
+    switch (players[i].type) {
+      case "📄":
+        if (!checkIfEnemyLeft(players[i])) {
+          console.log("📄 moving randomly");
+          moveSpecificPlayerRandomly(players[i], elapsedTime);
+          break;
+        } else {
+          console.log("📄 hunting 🥌");
+          for (let j = 0; j < players.length; j++) {
+            if (players[j].type == "🥌") {
+              let enemyX = players[j].x;
+              let enemyY = players[j].y;
+              let selfX = players[i].x;
+              let selfY = players[i].y;
+              if (enemyX > selfX) {
+                players[i].x += moveBias;
+              }
+              if (enemyX < selfX) {
+                players[i].x -= moveBias;
+              }
+              if (enemyY > selfY) {
+                players[i].y += moveBias;
+              }
+              if (enemyY < selfY) {
+                players[i].y -= moveBias;
+              }
+            }
+          }
+        }
+        break;
+      case "🥌":
+        if (!checkIfEnemyLeft(players[i])) {
+          console.log("🥌 moving randomly");
+          moveSpecificPlayerRandomly(players[i], elapsedTime);
+          break;
+        } else {
+          console.log("🥌 hunting ✂️");
+          for (let j = 0; j < players.length; j++) {
+            if (players[j].type == "✂️") {
+              let enemyX = players[j].x;
+              let enemyY = players[j].y;
+              let selfX = players[i].x;
+              let selfY = players[i].y;
+              if (enemyX > selfX) {
+                players[i].x += moveBias;
+              }
+              if (enemyX < selfX) {
+                players[i].x -= moveBias;
+              }
+              if (enemyY > selfY) {
+                players[i].y += moveBias;
+              }
+              if (enemyY < selfY) {
+                players[i].y -= moveBias;
+              }
+            }
+          }
+        }
+        break;
+      case "✂️":
+        if (!checkIfEnemyLeft(players[i])) {
+          console.log("✂️ moving randomly");
+          moveSpecificPlayerRandomly(players[i], elapsedTime);
+          break;
+        } else {
+          console.log("✂️ hunting 📄");
+          for (let j = 0; j < players.length; j++) {
+            if (players[j].type == "📄") {
+              let enemyX = players[j].x;
+              let enemyY = players[j].y;
+              let selfX = players[i].x;
+              let selfY = players[i].y;
+              if (enemyX > selfX) {
+                players[i].x += moveBias;
+              }
+              if (enemyX < selfX) {
+                players[i].x -= moveBias;
+              }
+              if (enemyY > selfY) {
+                players[i].y += moveBias;
+              }
+              if (enemyY < selfY) {
+                players[i].y -= moveBias;
+              }
+            }
+          }
+        }
+        break;
+    }
+  }
+}
+
 function checkPlayerCollision() {
-  let delta = 30;
+  let delta = 20;
   for (let i = 0; i < players.length; i++) {
     for (let j = 0; j < players.length; j++) {
       if (i != j) {
@@ -108,6 +246,24 @@ function checkPlayerCollision() {
             players[j].type = "✂️";
           } else if (players[i].type == "🥌" && players[j].type == "✂️") {
             players[j].type = "🥌";
+          }
+          if (players[i].type == players[j].type) {
+            let selfX = players[i].x;
+            let selfY = players[i].y;
+            let otherX = players[j].x;
+            let otherY = players[j].y;
+            if (selfX > otherX) {
+              players[i].x += 3;
+            }
+            if (selfX < otherX) {
+              players[i].x -= 3;
+            }
+            if (selfY > otherY) {
+              players[i].y += 3;
+            }
+            if (selfY < otherY) {
+              players[i].y -= 3;
+            }
           }
         }
       }
@@ -134,8 +290,8 @@ function renderGame() {
 }
 
 function runGame() {
-  let tickrate = 0.3;
-  movePlayer(tickrate);
+  let tickrate = 0.2;
+  movePlayersTowardEnemy(tickrate);
   checkPlayerCollision();
   renderGame();
   if (checkWinner()) {
