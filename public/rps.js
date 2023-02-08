@@ -107,8 +107,17 @@ function moveSpecificPlayerRandomly(player, elapsedTime) {
   player.y = y;
 }
 
+// This function checks if there is an enemy left on the board.
+// It takes in a player as a parameter.
+// It checks if there is an enemy left on the board by looping through the players array.
+// It checks if the enemy is the correct one (enemy is paper if the player is scissors, etc.).
+// If there is an enemy left on the board, it returns true. If not, it returns false.
+
 function checkIfEnemyLeft(player) {
+  // Loop through all players
   for (let i = 0; i < players.length; i++) {
+    // If the player is the same type as the passed in player
+    // then return true
     switch (player.type) {
       case "📄":
         if (players[i].type == "🥌") {
@@ -127,11 +136,109 @@ function checkIfEnemyLeft(player) {
         break;
     }
   }
+  // If we haven't returned true then there is no enemy left
   return false;
 }
 
+function evade() {
+  let moveBias = 0.05;
+  let noise = Math.random();
+  for (let i = 0; i < players.length; i++) {
+    switch (players[i].type) {
+      case "📄":
+        if (!checkIfEnemyLeft(players[i])) {
+          console.log("📄 moving randomly");
+          moveSpecificPlayerRandomly(players[i], elapsedTime);
+          break;
+        } else {
+          console.log("📄 hunting 🥌");
+          for (let j = 0; j < players.length; j++) {
+            if (players[j].type == "📄") {
+              let enemyX = players[j].x;
+              let enemyY = players[j].y;
+              let selfX = players[i].x;
+              let selfY = players[i].y;
+              if (enemyX > selfX) {
+                players[i].x += moveBias * noise;
+              }
+              if (enemyX < selfX) {
+                players[i].x -= moveBias * noise;
+              }
+              if (enemyY > selfY) {
+                players[i].y += moveBias * noise;
+              }
+              if (enemyY < selfY) {
+                players[i].y -= moveBias * noise;
+              }
+            }
+          }
+        }
+        break;
+      case "🥌":
+        if (!checkIfEnemyLeft(players[i])) {
+          console.log("🥌 moving randomly");
+          moveSpecificPlayerRandomly(players[i], elapsedTime);
+          break;
+        } else {
+          console.log("🥌 hunting ✂️");
+          for (let j = 0; j < players.length; j++) {
+            if (players[j].type == "🥌") {
+              let enemyX = players[j].x;
+              let enemyY = players[j].y;
+              let selfX = players[i].x;
+              let selfY = players[i].y;
+              if (enemyX > selfX) {
+                players[i].x += moveBias * noise;
+              }
+              if (enemyX < selfX) {
+                players[i].x -= moveBias * noise;
+              }
+              if (enemyY > selfY) {
+                players[i].y += moveBias * noise;
+              }
+              if (enemyY < selfY) {
+                players[i].y -= moveBias * noise;
+              }
+            }
+          }
+        }
+        break;
+      case "✂️":
+        if (!checkIfEnemyLeft(players[i])) {
+          console.log("✂️ moving randomly");
+          moveSpecificPlayerRandomly(players[i], elapsedTime);
+          break;
+        } else {
+          console.log("✂️ hunting 📄");
+          for (let j = 0; j < players.length; j++) {
+            if (players[j].type == "✂️") {
+              let enemyX = players[j].x;
+              let enemyY = players[j].y;
+              let selfX = players[i].x;
+              let selfY = players[i].y;
+              if (enemyX > selfX) {
+                players[i].x += moveBias * noise;
+              }
+              if (enemyX < selfX) {
+                players[i].x -= moveBias * noise;
+              }
+              if (enemyY > selfY) {
+                players[i].y += moveBias * noise;
+              }
+              if (enemyY < selfY) {
+                players[i].y -= moveBias * noise;
+              }
+            }
+          }
+        }
+        break;
+    }
+  }
+}
+
 function movePlayersTowardEnemy(elapsedTime) {
-  let moveBias = elapsedTime / 2;
+  let moveBias = 0.05;
+  let noise = Math.random();
   for (let i = 0; i < players.length; i++) {
     switch (players[i].type) {
       case "📄":
@@ -148,16 +255,16 @@ function movePlayersTowardEnemy(elapsedTime) {
               let selfX = players[i].x;
               let selfY = players[i].y;
               if (enemyX > selfX) {
-                players[i].x += moveBias;
+                players[i].x += moveBias * noise;
               }
               if (enemyX < selfX) {
-                players[i].x -= moveBias;
+                players[i].x -= moveBias * noise;
               }
               if (enemyY > selfY) {
-                players[i].y += moveBias;
+                players[i].y += moveBias * noise;
               }
               if (enemyY < selfY) {
-                players[i].y -= moveBias;
+                players[i].y -= moveBias * noise;
               }
             }
           }
@@ -177,16 +284,16 @@ function movePlayersTowardEnemy(elapsedTime) {
               let selfX = players[i].x;
               let selfY = players[i].y;
               if (enemyX > selfX) {
-                players[i].x += moveBias;
+                players[i].x += moveBias * noise;
               }
               if (enemyX < selfX) {
-                players[i].x -= moveBias;
+                players[i].x -= moveBias * noise;
               }
               if (enemyY > selfY) {
-                players[i].y += moveBias;
+                players[i].y += moveBias * noise;
               }
               if (enemyY < selfY) {
-                players[i].y -= moveBias;
+                players[i].y -= moveBias * noise;
               }
             }
           }
@@ -206,16 +313,16 @@ function movePlayersTowardEnemy(elapsedTime) {
               let selfX = players[i].x;
               let selfY = players[i].y;
               if (enemyX > selfX) {
-                players[i].x += moveBias;
+                players[i].x += moveBias * noise;
               }
               if (enemyX < selfX) {
-                players[i].x -= moveBias;
+                players[i].x -= moveBias * noise;
               }
               if (enemyY > selfY) {
-                players[i].y += moveBias;
+                players[i].y += moveBias * noise;
               }
               if (enemyY < selfY) {
-                players[i].y -= moveBias;
+                players[i].y -= moveBias * noise;
               }
             }
           }
