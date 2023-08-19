@@ -17,35 +17,47 @@ main {
   flex-grow: 1;
 }
 
-h1{
+/* h1{
   margin: 1vh;
-}
+} */
 
-main > article {
+main>article {
   display: grid;
-  height: 100%;
+  height: 100vh;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 2fr 1fr;
 }
 
-main > article > .article-section {
-  height: 100%;
+main>article>.article-section {
+  /* height: 100%; */
   padding-left: 25px;
 }
 
-main > article > .Education,
-main > article > .Projects {
+main>article>.Education,
+main>article>.Projects {
   border-left: 1px solid var(--border-color);
 }
 
-main > article > .Education,
-main > article > .Skills {
+main>article>.Education,
+main>article>.Skills {
   border-top: 1px solid var(--border-color);
   /* padding-bottom: 10px; */
 }
 
-main > article > .article-section > .section-title {
+main>article>.article-section>.section-title {
+  font-size: 2rem;
   color: #fc2500;
+}
+
+article > .article-section > p> a {
+  color: blue;
+}
+article>.article-section>p>a {
+  color: #fc2500;
+}
+
+article>.article-section>p>a:hover {
+  text-decoration: underline;
 }
 
 .skill-sections-programming,
@@ -55,10 +67,10 @@ main > article > .article-section > .section-title {
   align-items: center;
 }
 
-.skill-sections-programming > p,
-.skill-sections-tools > p {
+.skill-sections-programming>p,
+.skill-sections-tools>p {
   padding-left: 10px;
-  
+
 }
 
 .skill-sections-tools,
