@@ -1,0 +1,16 @@
+.policy {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+.policy h1 {
+  color: #fc2500;
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.policy section {
+  margin-bottom: 1.5rem;
+}
