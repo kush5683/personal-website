@@ -51,7 +51,7 @@ export const PROJECTS = [
     title: "TCP over Satellite",
     desc: "Analyzed congestion control behavior over satellite links; data capture and analysis in Python.",
     links: [{ href: "https://github.com/kush5683/TCP-over-Satellite", label: "Details" }],
-    tags: ["Networking", "Python", "Research", "Python"],
+    tags: ["Networking", "Python", "Research"],
   },
   {
     title: "Rock Paper Scissors",
