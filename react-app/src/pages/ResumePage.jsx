@@ -1,3 +1,5 @@
+import { EXPERIENCE, PROJECTS, SKILLS } from '../data.js';
+
 export default function ResumePage() {
   return (
     <main className="resume">
@@ -29,12 +31,53 @@ export default function ResumePage() {
 
         <section className="card">
           <h3 style={{ marginTop: 0 }}>Experience</h3>
-          {/* Compact version; details are on the main page */}
-          <ul>
-            <li>Inland Empire Health Plan — Information Security Engineer (2022—Present)</li>
-            <li>Inland Empire Health Plan — Information Security Intern (Summer 2022)</li>
-            <li>Health New England — Assistant Information Security Analyst (Summer 2021)</li>
-          </ul>
+          {EXPERIENCE.map((e, i) => (
+            <div key={i} className="resume-item">
+              <div className="resume-item-head">
+                <strong>{e.role}</strong> · {e.org}
+              </div>
+              <div className="meta">{e.where} · {e.when}</div>
+              {Array.isArray(e.points) && e.points.length > 0 && (
+                <ul>
+                  {e.points.map((p, j) => <li key={j}>{p}</li>)}
+                </ul>
+              )}
+            </div>
+          ))}
+        </section>
+
+        <section className="card">
+          <h3 style={{ marginTop: 0 }}>Projects</h3>
+          {PROJECTS.map((p, i) => (
+            <div key={i} className="resume-item">
+              <div className="resume-item-head"><strong>{p.title}</strong></div>
+              {p.desc && <div className="meta" style={{ marginBottom: 6 }}>{p.desc}</div>}
+              {p.tags && (
+                <div style={{ marginBottom: 6 }}>
+                  {p.tags.slice(0, 8).map((t, j) => (
+                    <span className="tag" key={j}>{t}</span>
+                  ))}
+                </div>
+              )}
+              {p.links && p.links.length > 0 && (
+                <div className="nav-links" style={{ gap: 10 }}>
+                  {p.links.map((l, j) => (
+                    <a key={j} href={l.href} target="_blank" rel="noreferrer">{l.label}</a>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </section>
+
+        <section className="card">
+          <h3 style={{ marginTop: 0 }}>Skills</h3>
+          {Object.entries(SKILLS).map(([cat, items]) => (
+            <div key={cat} className="resume-item">
+              <div className="resume-item-head"><strong>{cat}</strong></div>
+              <div className="meta">{items.join(' · ')}</div>
+            </div>
+          ))}
         </section>
 
         <section className="card">
@@ -56,4 +99,3 @@ export default function ResumePage() {
     </main>
   );
 }
-

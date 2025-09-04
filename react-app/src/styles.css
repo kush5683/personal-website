@@ -131,6 +131,11 @@ footer { padding: 28px 0; border-top: 1px solid var(--border); color: var(--mute
 .resume-item { margin: 10px 0 14px; }
 .resume-item-head { margin-bottom: 2px; }
 .hide-print { display: flex; }
+/* Resume readability */
+.resume .card + .card { margin-top: 12px; }
+.resume .resume-item ul { margin: 6px 0 0 18px; }
+.resume .resume-item li { margin: 4px 0; }
+.resume .tag { margin-right: 6px; margin-bottom: 6px; }
 
 @media print {
   :root { --text: #000; --muted: #333; --border: #bbb; }

@@ -14,7 +14,7 @@ function Hero() {
           </p>
           <div className="hero-cta">
             <a className="btn primary" href="#contact"><i className="fa-regular fa-paper-plane"/> Get in touch</a>
-            <a className="btn" href="../resume.html" target="_blank" rel="noreferrer"><i className="fa-regular fa-file-lines"/> View resume</a>
+            <a className="btn" href="#/resume"><i className="fa-regular fa-file-lines"/> View resume</a>
           </div>
         </div>
         <div className="hero-art" role="img" aria-label="Abstract background" data-reveal />
@@ -202,4 +202,3 @@ export default function Home() {
     </>
   );
 }
-
