@@ -5,7 +5,6 @@ export default function ResumePage() {
     <main className="resume">
       <div className="container">
         <div className="resume-actions hide-print">
-          <a className="btn" href="#top"><i className="fa-solid fa-arrow-left"/> Back</a>
           <button className="btn" onClick={() => window.print()}><i className="fa-regular fa-file-pdf"/> Print / PDF</button>
         </div>
 
