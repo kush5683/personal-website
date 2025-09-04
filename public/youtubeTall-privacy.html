@@ -2,70 +2,118 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>YouTubeTall Privacy Policy</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0e1116" />
+    <title>YouTubeTall — Privacy Policy</title>
+    <link rel="stylesheet" href="react/styles.css" />
     <link rel="stylesheet" href="youtubeTall-privacy.css" />
     <script src="https://kit.fontawesome.com/d063311697.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <nav>
-      <div id="nav-logo-section" class="nav-section">
-        <a href="/">
+    <div class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="react/index.html#top" aria-label="Home">
           <i class="fa-solid fa-code"></i>
+          <span>Kush Shah</span>
         </a>
+        <div class="spacer"></div>
+        <div class="nav-links">
+          <a href="react/index.html#projects">Projects</a>
+          <a href="react/index.html#/resume">Resume</a>
+          <a href="https://github.com/kush5683/YouTubeTall" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+        <div class="spacer"></div>
+        <div class="nav-links social">
+          <button class="btn theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <i class="icon fa-regular fa-moon"></i>
+          </button>
+          <a href="https://github.com/kush5683" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/kush5683" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
       </div>
-      <div id="nav-link-section" class="nav-section">
-        <a href="index.html">Home</a>
-        <a href="resume.html">Resume</a>
-      </div>
-      <div id="nav-social-section" class="nav-section">
-        <a href="https://github.com/kush5683" target="_blank">
-          <i class="fa-brands fa-square-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/kush5683" target="_blank">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-      </div>
-      <div id="nav-name-section" class="nav-section">
-        <p>Kush Shah</p>
-      </div>
-    </nav>
+    </div>
+
     <main>
-      <article class="policy">
-        <h1>YouTubeTall Privacy Policy</h1>
-        <p><strong>Effective Date:</strong> August 31, 2023</p>
-        <section>
-          <h2>Information We Collect</h2>
-          <p>
-            The YouTubeTall extension does <strong>not</strong> collect or store any
-            personal information. It operates entirely on your local device to
-            adjust how YouTube content is displayed.
-          </p>
-        </section>
-        <section>
-          <h2>How We Use Information</h2>
-          <p>
-            Because no personal data is collected, there is no information to
-            share or process. The extension stores settings only within your
-            browser.
-          </p>
-        </section>
-        <section>
-          <h2>Third&#8209;Party Services</h2>
-          <p>
-            The extension does not send data to third&#8209;party services. Any
-            YouTube content you view remains subject to YouTube’s own privacy
-            policy.
-          </p>
-        </section>
-        <section>
-          <h2>Contact</h2>
-          <p>
-            If you have questions about this policy, please contact the
-            developer through the information listed on the extension page.
-          </p>
-        </section>
-      </article>
+      <section id="policy-hero" data-reveal>
+        <div class="container hero">
+          <div>
+            <h1>YouTubeTall — Privacy Policy</h1>
+            <p class="meta">Effective Date: August 31, 2023</p>
+            <div class="hero-cta">
+              <a class="btn" href="react/index.html#projects"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+              <a class="btn primary" href="youtubeTall-privacy.html#contact"><i class="fa-regular fa-envelope"></i> Contact</a>
+            </div>
+          </div>
+          <div class="hero-art" role="img" aria-label="Abstract background"></div>
+        </div>
+      </section>
+
+      <section id="policy" data-reveal>
+        <div class="container">
+          <div class="card">
+            <h2 class="section-title">Information We Collect</h2>
+            <p>
+              The YouTubeTall extension does <strong>not</strong> collect or store any personal information. It operates entirely on your local device to adjust how YouTube content is displayed.
+            </p>
+          </div>
+          <div class="card">
+            <h2 class="section-title">How We Use Information</h2>
+            <p>
+              Because no personal data is collected, there is no information to share or process. The extension stores settings only within your browser.
+            </p>
+          </div>
+          <div class="card">
+            <h2 class="section-title">Third‑Party Services</h2>
+            <p>
+              The extension does not send data to third‑party services. Any YouTube content you view remains subject to YouTube’s own privacy policy.
+            </p>
+          </div>
+          <div class="card" id="contact">
+            <h2 class="section-title">Contact</h2>
+            <p>
+              Questions? Reach out via <a href="https://www.linkedin.com/in/kush5683" target="_blank" rel="noreferrer">LinkedIn</a> or open an issue on the <a href="https://github.com/kush5683/YouTubeTall" target="_blank" rel="noreferrer">GitHub repo</a>.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer>
+      <div class="container">© <span id="year"></span> Kush Shah · YouTubeTall</div>
+    </footer>
+
+    <script>
+      // Theme
+      (function() {
+        const saved = localStorage.getItem('theme');
+        const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        const initial = saved === 'light' || saved === 'dark' ? saved : (prefersLight ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-theme', initial);
+        function toggleTheme() {
+          const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+        }
+        const btn = document.getElementById('theme-toggle');
+        if (btn) btn.addEventListener('click', toggleTheme);
+      })();
+
+      // Reveal on scroll
+      (function() {
+        const els = Array.from(document.querySelectorAll('[data-reveal]'));
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+        }, { rootMargin: '0px 0px -10% 0px', threshold: 0.2 });
+        els.forEach(el => obs.observe(el));
+      })();
+
+      // Year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </body>
-</html>
+  </html>

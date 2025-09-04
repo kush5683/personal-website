@@ -1,0 +1,141 @@
+@font-face {
+  font-family: mono;
+  src: url("../fonts/JetBrainsMono-Medium.ttf");
+}
+
+:root {
+  --bg: #0e1116;
+  --panel: #12161f;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #e8eaf0;
+  --muted: #a8b0bf;
+  --accent: #fc2500;
+  --accent-2: #2978a0;
+  --radius: 12px;
+  --maxw: 1100px;
+  --shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+[data-theme='light'] {
+  --bg: #f7f9fc;
+  --panel: #fff;
+  --border: rgba(10, 12, 16, 0.12);
+  --text: #0a0c10;
+  --muted: #4b5563;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { color-scheme: dark light; scroll-behavior: smooth; }
+
+body {
+  background: radial-gradient(1200px 800px at 20% -10%, rgba(41,120,160,0.12), transparent 60%),
+              radial-gradient(1000px 700px at 100% 0%, rgba(252,37,0,0.08), transparent 60%),
+              var(--bg);
+  color: var(--text);
+  font-family: mono, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial;
+  line-height: 1.6;
+}
+
+/* Layout */
+.container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+section { padding: 72px 0; border-top: 1px solid var(--border); scroll-margin-top: 72px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Nav */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: saturate(160%) blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner { display: flex; align-items: center; gap: 24px; padding: 14px 0; }
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 600; }
+.brand i { font-size: 22px; }
+.spacer { flex: 1; }
+.nav a { color: var(--text); text-decoration: none; position: relative; }
+.nav a:hover { color: var(--accent); }
+.nav-links { display: flex; gap: 18px; align-items: center; }
+.social a { opacity: 0.9; }
+.social i { font-size: 20px; }
+
+/* Active nav link */
+.nav a.active { color: var(--accent); }
+.nav a.active::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: -14px; height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 2px;
+}
+
+/* Hero */
+.hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; align-items: center; padding: 56px 0 28px; }
+.hero h1 { font-size: 44px; line-height: 1.15; margin: 0 0 12px; }
+.hero p { color: var(--muted); margin: 0 0 22px; }
+.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn { border: 1px solid var(--border); color: var(--text); padding: 10px 14px; border-radius: 10px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; background: transparent; cursor: pointer; }
+.btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); border: none; }
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow); transition: 160ms ease; }
+.hero-art { min-height: 260px; border: 1px solid var(--border); border-radius: var(--radius); background: url('../assets/article1-img.avif') center/cover no-repeat; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02); }
+
+
+
+/* Cards */
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; transition: transform .16s ease, box-shadow .16s ease, border-color .2s ease; }
+.card h3 { margin: 0 0 6px; font-size: 18px; }
+.card .meta { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+.tag { display: inline-block; font-size: 12px; color: var(--muted); border: 1px solid var(--border); padding: 4px 10px; border-radius: 999px; margin-right: 8px; margin-bottom: 8px; background: transparent; }
+.tag.clickable { cursor: pointer; }
+.tag.clickable:hover { color: var(--text); border-color: var(--accent); }
+.tag.active { color: var(--text); border-color: var(--accent); background: linear-gradient(160deg, rgba(252,37,0,0.18), rgba(41,120,160,0.18)); }
+.tag.match { color: var(--text); border-color: var(--accent); background: linear-gradient(160deg, rgba(252,37,0,0.14), rgba(41,120,160,0.14)); }
+.tag.active.match { background: linear-gradient(160deg, rgba(252,37,0,0.28), rgba(41,120,160,0.28)); }
+.card:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: rgba(255,255,255,0.18); }
+.tag:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Section headers */
+.section-title { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; font-size: 22px; }
+.section-title:before { content: ''; width: 8px; height: 22px; background: linear-gradient(160deg, var(--accent), var(--accent-2)); border-radius: 4px; display: inline-block; }
+.section-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.clear-filters { border-color: var(--accent); color: var(--accent); padding: 6px 10px; }
+
+/* Footer */
+footer { padding: 28px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
+
+/* Theme toggle */
+.theme-toggle { display: inline-flex; align-items: center; gap: 8px; }
+.theme-toggle .icon { font-size: 18px; }
+
+/* Reveal animations */
+[data-reveal] { opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; }
+[data-reveal].visible { opacity: 1; transform: none; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-art { min-height: 200px; }
+}
+@media (min-width: 680px) {
+  .card.half { grid-column: span 6; }
+}
+@media (min-width: 1024px) {
+  .card.third { grid-column: span 4; }
+}
+
+/* Resume view */
+.resume { padding: 48px 0; }
+.resume .container { max-width: 900px; }
+.resume-actions { display: flex; gap: 12px; justify-content: flex-end; margin-bottom: 16px; }
+.resume-header { display: flex; justify-content: space-between; align-items: center; }
+.resume-item { margin: 10px 0 14px; }
+.resume-item-head { margin-bottom: 2px; }
+.hide-print { display: flex; }
+
+@media print {
+  :root { --text: #000; --muted: #333; --border: #bbb; }
+  body { background: #fff !important; color: #000 !important; }
+  .nav, footer, .hide-print { display: none !important; }
+  .card { border: none; background: transparent; box-shadow: none; padding: 0; }
+  .tag { border-color: #999; color: #000; }
+}

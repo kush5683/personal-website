@@ -1,0 +1,144 @@
+(() => {
+  const EXPERIENCE = [
+    {
+      role: "Cloud Security Engineer",
+      org: "Inland Empire Health Plan",
+      where: "Rancho Cucamonga, CA",
+      when: "Oct 2022 — Present",
+      points: ["Deployed various self-service tools for customers to manage their care, automated outreach, and compiled usage reports."],
+    },
+    {
+      role: "Information Security Intern",
+      org: "Inland Empire Health Plan",
+      where: "Rancho Cucamonga, CA",
+      when: "Summer 2022",
+      points: [
+        "Built PowerBI dashboards from Qualys data",
+        "Drafted and updated department policies",
+        "Contributed to SecureWorks integration",
+      ],
+    },
+    {
+      role: "Assistant Information Security Analyst",
+      org: "Health New England",
+      where: "Springfield, MA",
+      when: "Summer 2021",
+      points: [
+        "Worked with Rapid7, CyberArk, and ServiceNow",
+        "Reviewed and updated security policies",
+      ],
+    },
+  ];
+
+  const PROJECTS = [
+    {
+      title: "YouTubeTall — Privacy-friendly tall embeds",
+      desc: "Custom 9:16 YouTube layout with privacy-focused embed.",
+      links: [
+        { href: "https://github.com/kush5683/YouTubeTall", label: "GitHub" },
+        { href: "#/privacy/youtubetall", label: "Privacy" },
+      ],
+      tags: ["Frontend", "YouTube", "Privacy", "CSS", "JavaScript"],
+    },
+    {
+      title: "Warden — CFI for PHP apps",
+      desc: "Intrusion detection interfacing with PHP to enforce control flow integrity; layered approach on LAMP.",
+      links: [{ href: "https://github.com/kush5683/CS/tree/master/Warden", label: "GitHub" }],
+      tags: ["Security", "PHP", "CFI", "LAMP", "C", "Linux", "Research", "Socket Programming"],
+    },
+    {
+      title: "TCP over Satellite",
+      desc: "Analyzed congestion control behavior over satellite links; data capture and analysis in Python.",
+      links: [{ href: "https://github.com/kush5683/TCP-over-Satellite", label: "Details" }],
+      tags: ["Networking", "Python", "Research", "TCP"],
+    },
+    {
+      title: "Rock Paper Scissors",
+      desc: "A fun UI experiment with JS; port to React planned.",
+      links: [
+        { href: "../rps.html", label: "Play" },
+        { href: "https://github.com/kush5683", label: "Repo" },
+      ],
+      tags: ["UI", "Game", "JavaScript"],
+    },
+    {
+      title: "Conway's Game of Life",
+      desc: "Interactive visualization with controls; vanilla JS proof of concept.",
+      links: [{ href: "../game_of_life_page.html", label: "Demo" }],
+      tags: ["Visualization", "Canvas", "JavaScript"],
+    },
+    {
+      title: "Computer Networks Labs",
+      desc: "Socket programming, reliability, congestion, and routing labs.",
+      links: [
+        { href: "https://github.com/kush5683/CS/tree/master/3516", label: "Folder" },
+        { href: "https://github.com/kush5683/CS", label: "CS Repo" },
+      ],
+      tags: ["Networking", "C", "Wireshark", "Socket Programming"],
+    },
+    {
+      title: "Team Full‑Stack App",
+      desc: "Team-based full‑stack app with agile practices and testing.",
+      links: [
+        { href: "https://github.com/kush5683/CS/tree/master/3733", label: "Folder" },
+        { href: "https://github.com/kush5683/CS", label: "CS Repo" },
+      ],
+      tags: ["Java", "Full‑stack", "Testing"],
+    },
+    {
+      title: "AI Search and Heuristics",
+      desc: "Search, heuristics, and basic AI problem solving.",
+      links: [
+        { href: "https://github.com/kush5683/CS/tree/master/3133", label: "Folder" },
+        { href: "https://github.com/kush5683/CS", label: "CS Repo" },
+      ],
+      tags: ["AI", "Search", "Python"],
+    },
+    {
+      title: "Advanced Networks Experiments",
+      desc: "Transport analysis, SDN experiments, advanced congestion control.",
+      links: [
+        { href: "https://github.com/kush5683/CS/tree/master/4516", label: "Folder" },
+        { href: "https://github.com/kush5683/CS", label: "CS Repo" },
+      ],
+      tags: ["Networking", "SDN", "TCP", "Python"],
+    },
+    {
+      title: "Secure Coding and Threat Modeling",
+      desc: "Secure coding, threat modeling, and vulnerability mitigation.",
+      links: [
+        { href: "https://github.com/kush5683/CS/tree/master/4401", label: "Folder" },
+        { href: "https://github.com/kush5683/CS", label: "CS Repo" },
+      ],
+      tags: ["Security", "Secure Coding", "Threat Modeling", "C", "Linux"],
+    },
+    {
+      title: "Network Security Tools",
+      desc: "Network security tooling, packet analysis, and defenses.",
+      links: [
+        { href: "https://github.com/kush5683/CS/tree/master/4404", label: "Folder" },
+        { href: "https://github.com/kush5683/CS", label: "CS Repo" },
+      ],
+      tags: ["Network Security", "Security", "Tools", "Wireshark", "Python"],
+    },
+  ];
+
+  const SKILLS = {
+    Programming: [
+      "Python",
+      "Java",
+      "C",
+      "C++",
+      "Bash",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "Rust",
+      "C#",
+      "Go"
+    ],
+    Tools: ["Git", "Docker", "Oracle Cloud", "Power BI", "Retool"],
+  };
+
+  window.AppData = { EXPERIENCE, PROJECTS, SKILLS };
+})();

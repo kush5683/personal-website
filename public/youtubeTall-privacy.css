@@ -1,16 +1,12 @@
-.policy {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  line-height: 1.6;
+#policy .card { margin-bottom: 16px; }
+#policy-hero .hero h1 { font-size: 44px; margin: 0 0 8px; }
+#policy-hero .meta { margin-bottom: 14px; }
+
+@media (max-width: 900px) {
+  #policy-hero .hero h1 { font-size: 32px; }
 }
 
-.policy h1 {
-  color: #fc2500;
-  font-size: 2rem;
-  margin-top: 0;
-}
-
-.policy section {
-  margin-bottom: 1.5rem;
+@media print {
+  .nav, footer, .theme-toggle { display: none !important; }
+  .card { border: none; background: transparent; box-shadow: none; padding: 0; }
 }
