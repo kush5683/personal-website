@@ -1,9 +1,5 @@
 ## Keep legacy static files working as-is
 /legacy/*   /legacy/:splat   200
 
-## Allow direct asset access under /react
-/react/*    /react/:splat    200
-
-## SPA fallback to the React app
-/*          /react/index.html 200
-
+## SPA fallback to the React app at the root
+/*          /index.html 200

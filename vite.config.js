@@ -1,16 +1,18 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// Use root URL in dev, keep /react/ in build output
-export default defineConfig(({ command }) => ({
+// Build the app for the site root (no /react in URLs)
+export default defineConfig(() => ({
   root: 'react-app',
-  base: command === 'serve' ? '/' : '/react/',
+  base: '/',
   plugins: [react()],
   server: {
     open: '/',
   },
   build: {
-    outDir: '../public/react',
-    emptyOutDir: true,
+    // Emit to the project-level public/ so Cloudflare Pages serves at root
+    outDir: '../public',
+    // Avoid clearing other static assets (legacy/, fonts/, redirects, headers)
+    emptyOutDir: false,
   },
 }));
