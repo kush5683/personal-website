@@ -2,4 +2,4 @@
 /legacy/*   /legacy/:splat   200
 
 ## SPA fallback to the React app at the root
-/*          /index.html 200
+## /*          /index.html 200

@@ -120,7 +120,7 @@ export const PROJECTS = [
       { href: "https://github.com/kush5683/CS/tree/master/4404", label: "Folder" },
       { href: "https://github.com/kush5683/CS", label: "CS Repo" },
     ],
-    tags: ["Network Security", "Networking", "Tools", "Wireshark", "Python", "Linux"],
+    tags: ["Network Security", "Networking", "Security", "Tools", "Wireshark", "Python", "Linux"],
   },
 ];
 
