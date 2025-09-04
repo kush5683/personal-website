@@ -119,7 +119,7 @@ footer { padding: 28px 0; border-top: 1px solid var(--border); color: var(--mute
   .hero-art { min-height: 200px; }
 }
 /* Mobile-first tweaks */
-@media (max-width: 720px) {
+@media (max-width: 900px) {
   /* Reduce vertical spacing */
   section { padding: 48px 0; scroll-margin-top: 64px; }
 
@@ -134,7 +134,7 @@ footer { padding: 28px 0; border-top: 1px solid var(--border); color: var(--mute
   .nav a.active::after { display: none; }
 }
 /* Ensure hamburger hidden on desktop regardless of .btn defaults */
-@media (min-width: 721px) {
+@media (min-width: 901px) {
   .nav-toggle { display: none; }
 }
 @media (max-width: 480px) {

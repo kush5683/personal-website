@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { useMedia } from '../hooks.js';
 
 export default function Nav({ activeId, route, theme, onToggleTheme }) {
   const [open, setOpen] = useState(false);
+  const isMobile = useMedia('(max-width: 900px)');
   const isStandalone = !!route && route.startsWith('#/');
   const isActive = (href) => (!isStandalone && href === `#${activeId}`) || (route === href);
   const closeMenu = () => setOpen(false);
@@ -13,16 +15,24 @@ export default function Nav({ activeId, route, theme, onToggleTheme }) {
           <span>Kush Shah</span>
         </a>
         <div className="spacer" />
-        <button
-          className="btn nav-toggle"
-          aria-label="Toggle navigation"
-          aria-expanded={open}
-          aria-controls="primary-navigation"
-          onClick={() => setOpen((v) => !v)}
+        {isMobile && (
+          <button
+            className="btn nav-toggle"
+            aria-label="Toggle navigation"
+            aria-expanded={open}
+            aria-controls="primary-navigation"
+            onClick={() => setOpen((v) => !v)}
+          >
+            <i className={`fa-solid ${open ? 'fa-xmark' : 'fa-bars'}`} />
+          </button>
+        )}
+        <div
+          id="primary-navigation"
+          className="nav-links"
+          onClick={closeMenu}
+          aria-hidden={isMobile ? (!open) : false}
+          style={isMobile && !open ? { display: 'none' } : undefined}
         >
-          <i className={`fa-solid ${open ? 'fa-xmark' : 'fa-bars'}`} />
-        </button>
-        <div id="primary-navigation" className="nav-links" onClick={closeMenu}>
           <a className={isActive('#top') ? 'active' : ''} href="#top">About</a>
           <a className={isActive('#experience') ? 'active' : ''} href="#experience">Experience</a>
           <a className={isActive('#projects') ? 'active' : ''} href="#projects">Projects</a>

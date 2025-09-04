@@ -14,6 +14,20 @@ export function useTheme() {
   return [theme, toggle];
 }
 
+export function useMedia(query) {
+  const getMatch = () => (typeof window !== 'undefined' && 'matchMedia' in window ? window.matchMedia(query).matches : false);
+  const [matches, setMatches] = useState(getMatch);
+  useEffect(() => {
+    if (typeof window === 'undefined' || !('matchMedia' in window)) return;
+    const mql = window.matchMedia(query);
+    const handler = () => setMatches(mql.matches);
+    handler();
+    mql.addEventListener('change', handler);
+    return () => mql.removeEventListener('change', handler);
+  }, [query]);
+  return matches;
+}
+
 export function useHash() {
   const [hash, setHash] = useState(window.location.hash || '');
   useEffect(() => {
@@ -63,4 +77,3 @@ export function useReveal(enabled = true, watchKey = null) {
     return () => obs.disconnect();
   }, [enabled, watchKey]);
 }
-
