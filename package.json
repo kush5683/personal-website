@@ -3,12 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npx -y wrangler@latest dev",
-    "build": "npx -y wrangler@latest deploy --dry-run --outdir dist",
-    "deploy": "npx -y wrangler@latest deploy"
+    "dev": "vite --config vite.config.js",
+    "build": "vite build --config vite.config.js",
+    "preview": "vite preview --config vite.config.js --host",
+    "deploy:worker": "npx -y wrangler@latest deploy"
   },
   "devDependencies": {
-    "wrangler": "^4.34.0",
-    "esbuild": "^0.21.5"
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.3.4"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
