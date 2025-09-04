@@ -45,13 +45,13 @@ export const PROJECTS = [
     title: "Warden — CFI for PHP apps",
     desc: "Intrusion detection interfacing with PHP to enforce control flow integrity; layered approach on LAMP.",
     links: [{ href: "https://github.com/kush5683/CS/tree/master/Warden", label: "GitHub" }],
-    tags: ["Security", "PHP", "CFI", "LAMP"],
+    tags: ["Security", "PHP", "CFI", "LAMP", "C", "Python", "Research", "Linux"],
   },
   {
     title: "TCP over Satellite",
     desc: "Analyzed congestion control behavior over satellite links; data capture and analysis in Python.",
     links: [{ href: "https://github.com/kush5683/TCP-over-Satellite", label: "Details" }],
-    tags: ["Networking", "Python", "Research"],
+    tags: ["Networking", "Python", "Research", "Python"],
   },
   {
     title: "Rock Paper Scissors",
@@ -75,7 +75,7 @@ export const PROJECTS = [
       { href: "https://github.com/kush5683/CS/tree/master/3516", label: "Folder" },
       { href: "https://github.com/kush5683/CS", label: "CS Repo" },
     ],
-    tags: ["Networking", "Python", "Wireshark"],
+    tags: ["Networking", "Python", "Wireshark", "Socket Programming", "C", "Linux"],
   },
   {
     title: "Team Full‑Stack App",
@@ -84,7 +84,7 @@ export const PROJECTS = [
       { href: "https://github.com/kush5683/CS/tree/master/3733", label: "Folder" },
       { href: "https://github.com/kush5683/CS", label: "CS Repo" },
     ],
-    tags: ["Software Engineering", "Full‑stack", "Testing"],
+    tags: ["Software Engineering", "Full‑stack", "Testing", "Java"],
   },
   {
     title: "AI Search and Heuristics",
@@ -93,7 +93,7 @@ export const PROJECTS = [
       { href: "https://github.com/kush5683/CS/tree/master/3133", label: "Folder" },
       { href: "https://github.com/kush5683/CS", label: "CS Repo" },
     ],
-    tags: ["AI", "Search", "Python"],
+    tags: ["Artificial Intelligence", "Search", "Python"],
   },
   {
     title: "Advanced Networks Experiments",
@@ -102,7 +102,7 @@ export const PROJECTS = [
       { href: "https://github.com/kush5683/CS/tree/master/4516", label: "Folder" },
       { href: "https://github.com/kush5683/CS", label: "CS Repo" },
     ],
-    tags: ["Networking", "SDN", "TCP"],
+    tags: ["Networking", "SDN", "TCP", "Python", "Linux"],
   },
   {
     title: "Secure Coding and Threat Modeling",
@@ -111,7 +111,7 @@ export const PROJECTS = [
       { href: "https://github.com/kush5683/CS/tree/master/4401", label: "Folder" },
       { href: "https://github.com/kush5683/CS", label: "CS Repo" },
     ],
-    tags: ["Security", "Secure Coding", "Threat Modeling"],
+    tags: ["Security", "Secure Coding", "Threat Modeling", "C", "Python", "Linux"],
   },
   {
     title: "Network Security Tools",
@@ -120,7 +120,7 @@ export const PROJECTS = [
       { href: "https://github.com/kush5683/CS/tree/master/4404", label: "Folder" },
       { href: "https://github.com/kush5683/CS", label: "CS Repo" },
     ],
-    tags: ["Network Security", "Tools", "Wireshark"],
+    tags: ["Network Security", "Networking", "Tools", "Wireshark", "Python", "Linux"],
   },
 ];
 
