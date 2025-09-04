@@ -75,7 +75,7 @@ export const PROJECTS = [
       { href: "https://github.com/kush5683/CS/tree/master/3516", label: "Folder" },
       { href: "https://github.com/kush5683/CS", label: "CS Repo" },
     ],
-    tags: ["Networks", "Python", "Wireshark"],
+    tags: ["Networking", "Python", "Wireshark"],
   },
   {
     title: "Team Full‑Stack App",
@@ -102,7 +102,7 @@ export const PROJECTS = [
       { href: "https://github.com/kush5683/CS/tree/master/4516", label: "Folder" },
       { href: "https://github.com/kush5683/CS", label: "CS Repo" },
     ],
-    tags: ["Networks", "SDN", "TCP"],
+    tags: ["Networking", "SDN", "TCP"],
   },
   {
     title: "Secure Coding and Threat Modeling",
