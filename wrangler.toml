@@ -1,0 +1,17 @@
+name = "personal-kushshah"
+main = "src/worker.js"
+compatibility_date = "2024-09-01"
+
+[assets]
+directory = "public"
+binding = "ASSETS"
+
+
+[env.production]
+routes = [
+    {pattern = "kushshah.net/*", zone_name = "kushshah.net"}
+]
+# Optional: uncomment to add a route after binding a domain/zone
+# routes = [
+#   { pattern = "example.com/*", zone_name = "example.com" }
+# ]

@@ -1,0 +1,14 @@
+{
+  "name": "personal-kushshah",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "npx -y wrangler@latest dev",
+    "build": "npx -y wrangler@latest deploy --dry-run --outdir dist",
+    "deploy": "npx -y wrangler@latest deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.34.0",
+    "esbuild": "^0.21.5"
+  }
+}

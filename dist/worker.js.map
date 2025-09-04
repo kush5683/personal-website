@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../src/worker.js"],
+  "sourceRoot": "dist",
+  "sourcesContent": ["export default {\n  async fetch(request, env) {\n    const url = new URL(request.url);\n\n    // Try to serve the requested asset first\n    let response = await env.ASSETS.fetch(request);\n    if (response.status !== 404) return response;\n\n    // Fallbacks for SPA-style routes and clean URLs\n    // If the path looks like the React app, serve its index.html\n    const isReactApp = url.pathname === \"/\" || url.pathname.startsWith(\"/react\");\n    const spaPath = isReactApp ? \"/react/index.html\" : \"/index.html\";\n    const spaRequest = new Request(new URL(spaPath, url.origin), request);\n    response = await env.ASSETS.fetch(spaRequest);\n    if (response.status !== 404) return response;\n\n    // Still 404 \u2014 return the original response\n    return response;\n  },\n};\n"],
+  "mappings": ";AAAA,IAAO,iBAAQ;AAAA,EACb,MAAM,MAAM,SAAS,KAAK;AACxB,UAAM,MAAM,IAAI,IAAI,QAAQ,GAAG;AAG/B,QAAI,WAAW,MAAM,IAAI,OAAO,MAAM,OAAO;AAC7C,QAAI,SAAS,WAAW,IAAK,QAAO;AAIpC,UAAM,aAAa,IAAI,aAAa,OAAO,IAAI,SAAS,WAAW,QAAQ;AAC3E,UAAM,UAAU,aAAa,sBAAsB;AACnD,UAAM,aAAa,IAAI,QAAQ,IAAI,IAAI,SAAS,IAAI,MAAM,GAAG,OAAO;AACpE,eAAW,MAAM,IAAI,OAAO,MAAM,UAAU;AAC5C,QAAI,SAAS,WAAW,IAAK,QAAO;AAGpC,WAAO;AAAA,EACT;AACF;",
+  "names": []
+}
