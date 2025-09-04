@@ -1,0 +1,6 @@
+# Ensure the React app under /react can load CDN scripts and run client-side Babel
+/react/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://unpkg.com https://kit.fontawesome.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data: https:
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+

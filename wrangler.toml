@@ -6,6 +6,9 @@ compatibility_date = "2024-09-01"
 directory = "public"
 binding = "ASSETS"
 
+# Let Cloudflare Pages (auto config scan) know where the output lives
+pages_build_output_dir = "public"
+
 
 [env.production]
 routes = [
