@@ -62,18 +62,39 @@ export function useReveal(enabled = true, watchKey = null) {
   useEffect(() => {
     if (!enabled) return;
     const els = Array.from(document.querySelectorAll('[data-reveal]'));
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            obs.unobserve(e.target);
-          }
-        });
-      },
-      { rootMargin: '0px 0px -10% 0px', threshold: 0.2 },
-    );
+
+    // Fallback: if IntersectionObserver isn't available or errors (some mobile browsers),
+    // immediately reveal all elements to avoid hidden content.
+    const fallbackReveal = () => {
+      els.forEach((el) => el.classList.add('visible'));
+    };
+
+    if (typeof window === 'undefined' || typeof window.IntersectionObserver !== 'function') {
+      fallbackReveal();
+      return;
+    }
+
+    let obs;
+    try {
+      obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+              obs.unobserve(e.target);
+            }
+          });
+        },
+        // Use conservative values compatible across mobile browsers
+        { rootMargin: '0px 0px -10% 0px', threshold: 0.2 },
+      );
+    } catch (err) {
+      // If constructing the observer fails (e.g., unsupported rootMargin format), fallback.
+      fallbackReveal();
+      return;
+    }
+
     els.forEach((el) => obs.observe(el));
-    return () => obs.disconnect();
+    return () => obs && obs.disconnect();
   }, [enabled, watchKey]);
 }
