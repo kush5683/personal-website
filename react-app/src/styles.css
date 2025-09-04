@@ -133,6 +133,10 @@ footer { padding: 28px 0; border-top: 1px solid var(--border); color: var(--mute
   .nav .nav-links.social { flex-direction: row; align-items: center; gap: 14px; }
   .nav a.active::after { display: none; }
 }
+/* Ensure hamburger hidden on desktop regardless of .btn defaults */
+@media (min-width: 721px) {
+  .nav-toggle { display: none; }
+}
 @media (max-width: 480px) {
   .hero-cta .btn { flex: 1 1 100%; justify-content: center; }
 }
