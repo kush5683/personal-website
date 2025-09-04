@@ -13,10 +13,11 @@ Prereqs:
 - Cloudflare account with `wrangler` authenticated: `npx wrangler login`
 
 Scripts:
-- `npm run dev` — run locally on a Workers sandbox
-- `npm run build` — produce a build artifact in `dist/` (dry-run)
-- `npm run deploy` — deploy to your Cloudflare account
+- `npm run dev` — Vite dev server for the React app (served at `/react/`)
+- `npm run dev:worker` — build then run the Worker locally, serving React at `/`
+- `npm run build` — build React to `public/react/`
+- `npm run deploy:worker` — deploy Worker to production (binds `kushshah.net/*`)
 
 Config:
 - `wrangler.toml` sets the assets directory and worker entry (`src/worker.js`).
-- To bind a custom domain, add a `routes` entry in `wrangler.toml` after you attach a zone.
+- Routes are configured under the `production` env; the deploy script uses `--env production` to bind `kushshah.net/*`.

@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "vite --config vite.config.js",
+    "dev:worker": "npm run build && npx -y wrangler@latest dev",
     "build": "vite build --config vite.config.js",
     "preview": "vite preview --config vite.config.js --host",
-    "deploy:worker": "npx -y wrangler@latest deploy"
+    "deploy:worker": "npx -y wrangler@latest deploy --env production"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
