@@ -1,13 +1,16 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-export default defineConfig({
+// Use root URL in dev, keep /react/ in build output
+export default defineConfig(({ command }) => ({
   root: 'react-app',
-  base: '/react/',
+  base: command === 'serve' ? '/' : '/react/',
   plugins: [react()],
+  server: {
+    open: '/',
+  },
   build: {
     outDir: '../public/react',
     emptyOutDir: true,
   },
-});
-
+}));
