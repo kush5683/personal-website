@@ -49,7 +49,7 @@ a:hover { text-decoration: underline; }
   backdrop-filter: saturate(160%) blur(8px);
   border-bottom: 1px solid var(--border);
 }
-.nav-inner { display: flex; align-items: center; gap: 24px; padding: 14px 0; }
+.nav-inner { display: flex; align-items: center; gap: 24px; padding-top: 14px; padding-bottom: 14px; }
 .brand { display: flex; align-items: center; gap: 12px; font-weight: 600; }
 .brand i { font-size: 22px; }
 .spacer { flex: 1; }
