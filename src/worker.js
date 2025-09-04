@@ -2,10 +2,11 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // Redirect root to React app path so the URL updates
+    // Serve React app at the root without changing the URL
     if (url.pathname === "/" || url.pathname === "/index.html") {
-      const to = new URL("/react/", url.origin);
-      return Response.redirect(to.toString(), 301);
+      const spaRequest = new Request(new URL("/react/index.html", url.origin), request);
+      const spaResponse = await env.ASSETS.fetch(spaRequest);
+      if (spaResponse.status !== 404) return spaResponse;
     }
 
     // Try to serve the requested asset first
