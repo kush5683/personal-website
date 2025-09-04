@@ -1,15 +1,28 @@
+import { useState } from 'react';
+
 export default function Nav({ activeId, route, theme, onToggleTheme }) {
+  const [open, setOpen] = useState(false);
   const isStandalone = !!route && route.startsWith('#/');
   const isActive = (href) => (!isStandalone && href === `#${activeId}`) || (route === href);
+  const closeMenu = () => setOpen(false);
   return (
-    <div className="nav">
+    <div className={`nav ${open ? 'open' : ''}`}>
       <div className="container nav-inner">
-        <a className="brand" href="#top" aria-label="Home">
+        <a className="brand" href="#top" aria-label="Home" onClick={closeMenu}>
           <i className="fa-solid fa-code" />
           <span>Kush Shah</span>
         </a>
         <div className="spacer" />
-        <div className="nav-links">
+        <button
+          className="btn nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded={open}
+          aria-controls="primary-navigation"
+          onClick={() => setOpen((v) => !v)}
+        >
+          <i className={`fa-solid ${open ? 'fa-xmark' : 'fa-bars'}`} />
+        </button>
+        <div id="primary-navigation" className="nav-links" onClick={closeMenu}>
           <a className={isActive('#top') ? 'active' : ''} href="#top">About</a>
           <a className={isActive('#experience') ? 'active' : ''} href="#experience">Experience</a>
           <a className={isActive('#projects') ? 'active' : ''} href="#projects">Projects</a>
@@ -18,7 +31,7 @@ export default function Nav({ activeId, route, theme, onToggleTheme }) {
           <a className={isActive('#contact') ? 'active' : ''} href="#contact">Contact</a>
         </div>
         <div className="spacer" />
-        <div className="nav-links social">
+        <div className="nav-links social" onClick={closeMenu}>
           <button className="btn theme-toggle" onClick={onToggleTheme} aria-label="Toggle theme">
             <i className="icon fa-regular fa-moon" style={{ display: theme === 'light' ? 'inline-block' : 'none' }} />
             <i className="icon fa-regular fa-sun" style={{ display: theme === 'dark' ? 'inline-block' : 'none' }} />
@@ -34,4 +47,3 @@ export default function Nav({ activeId, route, theme, onToggleTheme }) {
     </div>
   );
 }
-
