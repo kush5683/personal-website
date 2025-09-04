@@ -20,8 +20,8 @@ export default function Nav({ activeId, route, theme, onToggleTheme }) {
         <div className="spacer" />
         <div className="nav-links social">
           <button className="btn theme-toggle" onClick={onToggleTheme} aria-label="Toggle theme">
-            <i className="icon fa-regular fa-moon" style={{ display: theme === 'dark' ? 'inline-block' : 'none' }} />
-            <i className="icon fa-regular fa-sun" style={{ display: theme === 'light' ? 'inline-block' : 'none' }} />
+            <i className="icon fa-regular fa-moon" style={{ display: theme === 'light' ? 'inline-block' : 'none' }} />
+            <i className="icon fa-regular fa-sun" style={{ display: theme === 'dark' ? 'inline-block' : 'none' }} />
           </button>
           <a href="https://github.com/kush5683" target="_blank" rel="noreferrer" aria-label="GitHub">
             <i className="fa-brands fa-github" />
